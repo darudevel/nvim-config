@@ -13,6 +13,10 @@ require("lazy").setup({
     end,
   },
   {
+    "github/copilot.vim",
+    priority = 500
+  },
+  {
     "hrsh7th/nvim-cmp",
     dependencies = {
       "hrsh7th/cmp-nvim-lsp",
