@@ -6,10 +6,10 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
   {
-    "projekt0n/github-nvim-theme",
+    "blazkowolf/gruber-darker.nvim"",
     priority = 1000,
     init = function()
-        vim.cmd.colorscheme("github_dark")
+        vim.cmd.colorscheme("gruber-darker")
     end,
   },
   {
