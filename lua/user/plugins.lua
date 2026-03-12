@@ -6,17 +6,6 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
   {
-    "blazkowolf/gruber-darker.nvim",
-    priority = 1000,
-    init = function()
-        vim.cmd.colorscheme("gruber-darker")
-    end,
-  },
-  {
-    "github/copilot.vim",
-    priority = 500,
-  },
-  {
     "hrsh7th/nvim-cmp",
     dependencies = {
       "hrsh7th/cmp-nvim-lsp",
@@ -54,23 +43,13 @@ require("lazy").setup({
     config = function()
       require("mason").setup()
       require("mason-lspconfig").setup({
-        ensure_installed = { "lua_ls", "clangd" },
+        ensure_installed = { "lua_ls" },
       })
 
       local caps = require('cmp_nvim_lsp').default_capabilities()
       vim.lsp.config('lua_ls', {
         capabilities = caps,
         settings = { Lua = { diagnostics = { globals = {'vim'} } } }
-      })
-
-      vim.lsp.config('clangd', {
-        capabilities = caps,
-        cmd = {
-          "clangd",
-          "--query-driver=/usr/bin/gcc,/usr/bin/g++",
-          "--background-index",
-          "--header-insertion=never",
-        }
       })
     end
   },
