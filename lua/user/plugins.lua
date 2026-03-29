@@ -6,10 +6,11 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
   {
-    "blazkowolf/gruber-darker.nvim",
+    "scottmckendry/cyberdream.nvim",
+    lazy = false,
     priority = 1000,
     init = function()
-        vim.cmd.colorscheme("gruber-darker")
+        vim.cmd.colorscheme("cyberdream")
     end,
   },
   {
