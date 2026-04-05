@@ -6,11 +6,11 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
   {
-    "scottmckendry/cyberdream.nvim",
+    "projekt0n/github-nvim-theme",
     lazy = false,
     priority = 1000,
     init = function()
-        vim.cmd.colorscheme("cyberdream")
+        vim.cmd.colorscheme("github_dark")
     end,
   },
   {
