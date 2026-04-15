@@ -6,16 +6,21 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
   {
-    "projekt0n/github-nvim-theme",
+    "blazkowolf/gruber-darker.nvim",
+    opts = {
+        bold = true,
+        italic = {
+            strings = false,
+            comments = false,
+            operators = false,
+            folds = false,
+        },
+    },
     lazy = false,
     priority = 1000,
     init = function()
-        vim.cmd.colorscheme("github_dark")
+        vim.cmd.colorscheme("gruber-darker")
     end,
-  },
-  {
-    "github/copilot.vim",
-    priority = 500,
   },
   {
     "hrsh7th/nvim-cmp",
@@ -82,7 +87,7 @@ require("lazy").setup({
     build = ":TSUpdate",
     config = function()
       require("nvim-treesitter").setup({
-        ensure_installed = { "lua", "c", "cpp", "vim", "vimdoc", "markdown" },
+        ensure_installed = { "lua", "c", "cpp", "vim", "vimdoc", "markdown", "rust", "fortran" },
         highlight = { enable = true },
         indent = { enable = true },
       })
